@@ -12,7 +12,7 @@
 """
 Here we start customizing our application.
 
-In this version we will add menu bars for more interction.
+Here we have added our application Layout and widgets to that layout
 """
 
 # Standard imports
@@ -33,6 +33,8 @@ class PySideTutorialWindow(QtGui.QMainWindow):
         self.setMinimumWidth(200)
         PySideAppIcon = QtGui.QIcon('MyAppIcon.png')
         self.setWindowIcon(PySideAppIcon)
+        self.buildButtons()
+        self.setCentralWidget(self.ContainerWidget)
 
     def CenterMethod(self):
         BoundingRectangle = self.frameGeometry()
@@ -61,6 +63,22 @@ class PySideTutorialWindow(QtGui.QMainWindow):
     def newFile(self):
         x = 2 + 2
         print(x)
+
+    def buildButtons(self):
+        self.ContainerWidget = QtGui.QWidget()
+        self.GridLayout = QtGui.QGridLayout(self)
+        self.thisButton = QtGui.QPushButton("this", self)
+        self.thatButton = QtGui.QPushButton("that", self)
+        self.anotherButton = QtGui.QRadioButton("another")
+        self.specialSlider = QtGui.QSlider()
+        self.specialSlider.setTickInterval(10)
+        self.specialSlider.TicksRight
+        self.anotherButton.setChecked(True)
+        self.GridLayout.addWidget(self.thisButton, 0, 0)
+        self.GridLayout.addWidget(self.thatButton, 0, 1)
+        self.GridLayout.addWidget(self.anotherButton, 1, 0)
+        self.GridLayout.addWidget(self.specialSlider, 2, 3)
+        self.ContainerWidget.setLayout(self.GridLayout)
 
 if __name__ == '__main__':
     PySideStarterApp = QtGui.QApplication(sys.argv)

@@ -12,7 +12,7 @@
 """
 Here we start customizing our application.
 
-In this version we will add menu bards for more interaccation.
+In this version we will add menu bars for more interaction.
 """
 
 # Standard imports
