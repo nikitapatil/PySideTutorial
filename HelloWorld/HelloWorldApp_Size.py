@@ -11,6 +11,9 @@
 
 """
 This is the first Application to be written using PySide
+
+Here we have added the size option of the central widget and have
+added a window title.
 """
 
 # Standard imports
@@ -18,12 +21,13 @@ import sys
 from PySide import QtGui  # The System we are using
 
 # Create your Qt Application Object
-app = QtGui.QApplication(sys.argv)
+firstApp = QtGui.QApplication(sys.argv)
 
 # We need a Widget/visual component to go within our application
 widget = QtGui.QWidget()
-
-# widget.show()
-app.exec_()
+widget.resize(500, 250)
+widget.setWindowTitle('Hello World')
+widget.show()
+firstApp.exec_()
 
 sys.exit()
